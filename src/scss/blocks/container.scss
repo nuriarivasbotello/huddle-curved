@@ -1,0 +1,133 @@
+@use '../mixins/responsive.scss' as *;
+@use '../mixins/pseudo.scss' as *;
+.containers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 80px;
+  position: relative;
+}
+.container {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 30px auto;
+  background-color: white;
+
+  @include responsive(desktop) {
+    width: 1440px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    justify-content: center;
+  }
+  &__text {
+    @include responsive(desktop) {
+      text-align: left;
+      padding-left: 100px;
+      padding-right: 100px;
+      position: relative;
+      bottom: 50px;
+    }
+  }
+  &__title {
+    color: var(--color-text);
+    font-family: 'Poppins', sans-serif;
+  }
+  &__paragraph {
+    font-family: var(--font-text);
+    color: rgb(162, 162, 162);
+  }
+}
+.container-together {
+  @include responsive(desktop) {
+    text-align: left;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
+.container-conversation {
+  @include responsive(desktop) {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+}
+.container-users {
+  @include responsive(desktop) {
+    grid-column: 1/2;
+    grid-row: 2/2;
+  }
+}
+.together-curve {
+  margin-top: 150px;
+  background-color: rgba(246, 251, 255, 1);
+  &::before {
+    @include pseudo(1500px, 1000px) {
+      margin-top: 178px;
+      background-repeat: no-repeat;
+      background-image: url(../assets/images/bg-section-top-mobile-1.svg);
+    }
+  }
+  &::after {
+    @include pseudo(1500px, 1000px) {
+      margin-top: 1600px;
+      background-repeat: no-repeat;
+      background-image: url(../assets/images/bg-section-bottom-mobile-1.svg);
+    }
+  }
+  @include responsive(desktop) {
+    margin-top: 180px;
+    &::before {
+      @include pseudo(1500px, 1000px) {
+        margin-top: -160px;
+        background-repeat: no-repeat;
+        background-image: url(../assets/images/bg-section-top-desktop-1.svg);
+      }
+    }
+    &::after {
+      @include pseudo(1500px, 1000px) {
+        margin-top: 600px;
+        background-repeat: no-repeat;
+        background-image: url(../assets/images/bg-section-bottom-desktop-1.svg);
+      }
+    }
+  }
+}
+.users-curve {
+  margin-bottom: 150px;
+  background-color: rgba(246, 251, 255, 1);
+  &::before {
+    @include pseudo(400px, 1000px) {
+      margin-top: 194px;
+      background-repeat: no-repeat;
+      background-image: url(../assets/images/bg-section-top-mobile-2.svg);
+    }
+  }
+  &::after {
+    @include pseudo(1500px, 400px) {
+      margin-top: 1000px;
+      background-repeat: no-repeat;
+      background-image: url(../assets/images/bg-section-bottom-mobile-2.svg);
+    }
+  }
+  @include responsive(desktop) {
+    margin-top: 180px;
+    margin-bottom: 180px;
+    &::before {
+      @include pseudo(1500px, 1000px) {
+        margin-top: -155px;
+        background-repeat: no-repeat;
+        background-image: url(../assets/images/bg-section-top-desktop-2.svg);
+      }
+    }
+    &::after {
+      @include pseudo(1500px, 1000px) {
+        margin-top: 600px;
+        background-repeat: no-repeat;
+        background-image: url(../assets/images/bg-section-bottom-desktop-2.svg);
+      }
+    }
+  }
+}

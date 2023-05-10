@@ -1,0 +1,12 @@
+@use '../mixins/responsive.scss' as *;
+.copyright {
+  color: white;
+  margin: 30px auto;
+  align-items: center;
+  font-size:15px;
+  font-family: var(--font-text);
+  @include responsive(desktop) {
+    position: relative;
+    top: 60px;
+  }
+}

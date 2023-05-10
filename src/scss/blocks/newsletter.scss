@@ -1,0 +1,47 @@
+@use '../mixins/responsive.scss' as *;
+.newsletter{
+    width: 320px;
+    height: 286px;
+    padding: 0 10px;
+    margin: 0 auto;
+    position: relative;
+    bottom:60px;
+    @include responsive(desktop) {
+        left:400px;
+        top:20px;
+    }
+    &__title{
+        font-family:var(--font-text);
+        color:white;
+    }
+    &__paragraph{
+        font-family:var(--font-text);
+        color:white;
+    }
+    &__buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        gap: 15px;
+    }
+    &__container{
+        width: 310px;
+        height: 48px;
+        color:white;
+        border-radius:0.5rem;
+        background-color: white;
+        
+       
+    }
+    &__button{
+        width: 160px;
+        height: 48px;
+        margin-left:150px;
+        border-radius:0.2rem;
+        color:white;
+
+        background-color: var( --color-button);
+    }
+}

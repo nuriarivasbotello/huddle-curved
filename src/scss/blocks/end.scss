@@ -1,0 +1,7 @@
+@use '../mixins/responsive.scss' as *;
+.end {
+  @include responsive(desktop) {
+    display: flex;
+    flex-direction: column;
+  }
+}

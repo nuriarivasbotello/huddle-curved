@@ -1,0 +1,12 @@
+@use '../mixins/responsive.scss' as *;
+.social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 20px;
+  margin: 30px 0 ;
+  align-items: center;
+  @include responsive(desktop) {
+    padding-left:10px;
+  }
+}

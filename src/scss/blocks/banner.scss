@@ -1,0 +1,25 @@
+@use '../mixins/responsive.scss' as *;
+.banner{
+    display: flex;
+    flex-direction: column;
+    color:var(--color-text);
+    align-items: center;
+    @include responsive(desktop) {
+
+    }
+    &__title{
+        text-align: center;
+        font-size: 35px;;
+        font-family: var(--font-title);
+        font-weight: bold;
+    }
+    &__paragraph{
+        text-align: center;
+        font-size:20px;
+        font-family:var(--font-text);
+        @include responsive(desktop) {
+        width:600px;
+    }
+
+    }
+}
